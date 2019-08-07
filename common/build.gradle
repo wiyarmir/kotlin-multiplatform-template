@@ -1,0 +1,189 @@
+apply plugin: 'kotlin-multiplatform'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'org.jetbrains.kotlin.native.cocoapods'
+apply plugin: 'co.touchlab.kotlinxcodesync'
+
+kotlin {
+
+    jvm {
+
+    }
+
+    js {
+        compileKotlinJs {
+            kotlinOptions.metaInfo = true
+            kotlinOptions.sourceMap = true
+            kotlinOptions.moduleKind = "commonjs"
+            kotlinOptions.main = "call"
+        }
+    }
+
+    sourceSets {
+        commonRelease {}
+
+        commonDebug {}
+
+        commonMain {
+            if (rootProject.hasProperty("debug")) {
+                dependsOn commonDebug
+            } else {
+                dependsOn commonRelease
+            }
+
+            dependencies {
+                api Libs.kotlinStdlibCommon
+                api Libs.kotlinxCoroutinesCoreCommon
+                api Libs.kotlinxSerializationRuntimeCommon
+                api Libs.ktorClientCore
+                api Libs.ktorClientJson
+                api Libs.ktorClientLogging
+                api Libs.ktorClientSerialization
+            }
+        }
+
+        commonTest {
+            dependencies {
+                api Libs.kotlinTestCommon
+            }
+        }
+
+        iOSMain {
+            dependencies {
+                api Libs.kotlinxCoroutinesCoreNative
+                api Libs.kotlinxSerializationRuntimeNative
+                api Libs.ktorClientIos
+                api Libs.ktorClientJsonNative
+                api Libs.ktorClientLoggingNative
+                api Libs.ktorClientSerializationNative
+            }
+        }
+
+        jvmMain {
+            dependencies {
+                api Libs.kotlinStdlib
+                api Libs.kotlinxSerializationRuntime
+                api Libs.ktorClientJsonJvm
+                api Libs.ktorClientLoggingJvm
+                api Libs.ktorClientSerializationJvm
+            }
+        }
+
+        jvmTest {
+            dependencies {
+                api Libs.junit
+                api Libs.kotlinTestJunit
+                api Libs.kotlinTest
+            }
+        }
+
+        jsMain {
+            dependencies {
+                api Libs.kotlinStdlibJs
+                api Libs.kotlinxSerializationRuntimeJs
+                api Libs.ktorClientJs
+                api Libs.ktorClientJsonJs
+                api Libs.ktorClientLoggingJs
+                api Libs.ktorClientSerializationJs
+            }
+        }
+
+        jsTest {
+            dependencies {
+                api Libs.kotlinTestJs
+            }
+        }
+    }
+
+    targets {
+        def buildForDevice = project.findProperty("kotlin.native.cocoapods.target") == "ios_arm"
+        if (buildForDevice) {
+            iosArm64("iOS64")
+            iosArm32("iOS32")
+
+            def iOSMain = sourceSets.iOSMain
+            sourceSets["iOS64Main"].dependsOn(iOSMain)
+            sourceSets["iOS32Main"].dependsOn(iOSMain)
+        } else {
+            iosX64("iOS")
+        }
+    }
+
+    cocoapods {
+        summary = "Kotlin Multiplatform Template common module"
+        homepage = "https://github.com/wiyarmir/kotlin-multiplatform-template"
+    }
+}
+
+configurations {
+    compileClasspath
+}
+
+xcode {
+    projectPath = "../ios/KotlinMultiplatformTemplate.xcodeproj"
+    target = "KotlinMultiplatformTemplate"
+}
+
+
+//noinspection GroovyAssignabilityCheck
+task packForXCode(type: Sync) {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+    final String mode = System.getenv('CONFIGURATION')?.toUpperCase() ?: 'DEBUG'
+
+    inputs.property "mode", mode
+    dependsOn kotlin.targets.iOS.binaries.findFramework(mode).linkTask
+
+    from { kotlin.targets.iOS.compilations.main.findFramework(mode).outputFile.parentFile }
+    into frameworkDir
+
+    doLast {
+        new File(frameworkDir, 'gradlew').with {
+            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
+            setExecutable(true)
+        }
+    }
+}
+tasks.build.dependsOn packForXCode
+
+//noinspection GroovyAssignabilityCheck
+task packForXCodeTest(type: Sync) {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks-test")
+    final String mode = System.getenv('CONFIGURATION')?.toUpperCase() ?: 'DEBUG'
+
+    inputs.property "mode", mode
+    dependsOn "linkTestDebugFrameworkIos"
+    dependsOn kotlin.targets.iOS.binaries.findTest(mode).linkTask
+
+    from { kotlin.targets.iOS.binaries.findTest(mode).outputFile.parentFile }
+    into frameworkDir
+
+    doLast {
+        new File(frameworkDir, 'gradlew').with {
+            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
+            setExecutable(true)
+        }
+    }
+}
+
+//noinspection GroovyAssignabilityCheck
+task iosTest {
+    def device = project.findProperty("iosDevice")?.toString() ?: "iPhone XR"
+    dependsOn 'linkTestDebugExecutableIos'
+    group = JavaBasePlugin.VERIFICATION_GROUP
+    description = "Runs tests for target 'ios' on an iOS simulator"
+
+    doLast {
+        def binary = kotlin.targets.ios.compilations.test.getBinary('EXECUTABLE', 'DEBUG')
+        exec {
+            commandLine 'xcrun', 'simctl', 'spawn', device, binary.absolutePath
+        }
+    }
+}
+
+detekt {
+    input = files(
+            "src/commonMain/kotlin",
+            "src/iOSMain/kotlin",
+            "src/jsMain/kotlin",
+            "src/jvmMain/kotlin",
+    )
+}

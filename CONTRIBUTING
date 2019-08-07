@@ -1,0 +1,9 @@
+If you would like to contribute code to this repository you can do so through GitHub by creating a new branch in the repository and sending a pull request or opening an issue. Please, remember that there are some requirements you have to pass before accepting your contribution:
+
+* Write clean code and test it.
+* The code written will have to match the product owner requirements.
+* Follow the repository code style.
+* Write good commit messages.
+* Do not send pull requests without checking if the project build is OK in the CI environment.
+* Review if your changes affects the repository documentation and update it.
+* Describe the PR content and don't hesitate to add comments to explain us why you've added or changed something.

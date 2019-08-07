@@ -1,0 +1,5 @@
+platform :ios, '12.1'
+
+target 'KotlinMultiplatformTemplate' do
+    pod 'common', :path => '../common'
+end

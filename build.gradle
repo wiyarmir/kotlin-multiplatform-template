@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        google()
+        maven { url "http://dl.bintray.com/kotlin/kotlin-eap" }
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:$Versions.kotlinFrontendPlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.kotlin"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$Versions.kotlin"
+        classpath "com.android.tools.build:gradle:$Versions.androidGradlePlugin"
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.0.0"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$Versions.detekt"
+        classpath 'co.touchlab:kotlinxcodesync:0.1.2'
+    }
+}
+
+subprojects {
+    buildscript{
+        repositories {
+            google()
+            maven { url "http://dl.bintray.com/kotlin/kotlin-eap" }
+            maven { url "https://kotlin.bintray.com/kotlinx" }
+            maven { url "https://plugins.gradle.org/m2/" }
+            mavenCentral()
+            jcenter()
+        }
+    }
+    
+    repositories {
+        mavenLocal()
+        jcenter()
+        google()
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven { url "http://dl.bintray.com/kotlin/kotlinx.html" }
+        maven { url "http://dl.bintray.com/kotlin/ktor" }
+        maven { url "https://dl.bintray.com/kotlin/squash" }
+        maven { url "https://kotlin.bintray.com/kotlin-js-wrappers" }
+    }
+
+    apply plugin: "io.gitlab.arturbosch.detekt"
+
+    detekt {
+        toolVersion = Versions.detekt
+        filters = ".*/resources/.*,.*/build/.*"
+        config = files("$rootDir/detekt.yml")
+    }
+    dependencies {
+        detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$Versions.detekt"
+    }
+}
+
+// Heroku/herokuish
+
+task stage() {
+    group "distribution"
+    dependsOn(':backend:release')
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.AbstractKotlinCompile).all {
+    kotlinOptions.freeCompilerArgs += ["-Xuse-experimental=kotlin.Experimental"]
+}

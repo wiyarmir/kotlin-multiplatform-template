@@ -1,0 +1,192 @@
+defaults: &defaults
+  working_directory: ~/code
+  docker:
+    - image: circleci/jdk8:0.1.1
+  environment:
+    JVM_OPTS: -Xmx3200m
+    GRADLE_OPTS: '-Dorg.gradle.daemon=false'
+    _JAVA_OPTIONS: "-Xms256m -Xmx1280m -XX:MaxPermSize=350m"
+
+version: 2
+jobs:
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars--{{ checksum "build.gradle" }}-{{ checksum  "backend/build.gradle" }}-{{ checksum  "web/build.gradle" }}
+      - run:
+          name: Lint project
+          command: ./gradlew -Porg.gradle.project.buildAndroid=false detekt
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars--{{ checksum "build.gradle" }}-{{ checksum  "backend/build.gradle" }}-{{ checksum  "web/build.gradle" }}
+      - run:
+          name: Save detekt results
+          command: |
+            mkdir -p ~/detekt/
+            find . -type f -regex ".*/build/reports/detekt/*" -exec cp {} ~/detekt/ \;
+          when: always
+      - store_test_results:
+          path: ~/detekt
+      - store_artifacts:
+          path: ~/detekt
+
+  build-android:
+    <<: *defaults
+    docker:
+      - image: circleci/android:api-28-alpha
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "android/build.gradle" }}
+      - run:
+          name: Run checks
+          command: ./gradlew -Porg.gradle.project.buildAndroid=true :android:testDebugUnitTest :android:detekt :android:lintDebug
+      - run:
+          name: Build Application
+          command: ./gradlew -Porg.gradle.project.buildAndroid=true :android:assemble
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "android/build.gradle" }}
+      - store_artifacts:
+          path: android/build/outputs/apk
+          destination: apk
+      - store_artifacts:
+          path: android/build/reports
+          destination: reports
+      - store_test_results:
+          path: android/build/test-results
+
+  build-backend:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars--{{ checksum "build.gradle" }}-{{ checksum  "backend/build.gradle" }}
+      - run:
+          name: Build project
+          command: ./gradlew -Porg.gradle.project.buildAndroid=false :backend:assemble --stacktrace
+      - store_artifacts:
+          path: backend/build/libs
+      - run:
+          name: Run Tests
+          command: ./gradlew -Porg.gradle.project.buildAndroid=false :backend:test --stacktrace
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/junit/
+            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
+          when: always
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars--{{ checksum "build.gradle" }}-{{ checksum  "backend/build.gradle" }}
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit
+
+  build-web:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars--{{ checksum "build.gradle" }}-{{ checksum  "backend/build.gradle" }}-{{ checksum  "web/build.gradle" }}
+      - run:
+          name: Build project
+          command: ./gradlew -Porg.gradle.project.buildAndroid=false :web:assemble --stacktrace
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars--{{ checksum "build.gradle" }}-{{ checksum  "backend/build.gradle" }}-{{ checksum  "web/build.gradle" }}
+      - store_artifacts:
+          path: web/build/libs
+      - run:
+          name: Run Tests
+          command: ./gradlew -Porg.gradle.project.buildAndroid=false :web:test --stacktrace
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/junit/
+            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
+          when: always
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit
+
+  deploy-backend:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push $HEROKU_URL master
+
+  build-ios:
+    macos:
+      xcode: "10.1.0"
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: tests
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
+      - run:
+          name: Configure Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat ios/Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            sudo gem install bundler
+      - run: cd ios && bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
+          paths:
+            - ios/vendor/bundle
+      - restore_cache:
+          key: gradle-{{ checksum "build.gradle" }}-{{ checksum "common/build.gradle" }}
+      - run:
+          name: fastlane
+          command: cd ios && bundle exec fastlane ios $FASTLANE_LANE --verbose
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: gradle-{{ checksum "build.gradle" }}-{{ checksum "common/build.gradle" }}
+      - store_artifacts:
+          path: ios/output/
+      - store_test_results:
+          path: ios/output/scan
+  swiftlint:
+    docker:
+      - image: dantoml/swiftlint:latest
+    steps:
+      - checkout
+      - run: swiftlint lint --reporter junit | tee result.xml
+      - store_artifacts:
+          path: result.xml
+      - store_test_results:
+          path: result.xml
+
+workflows:
+  version: 2
+  pr-checks:
+    jobs:
+      - lint
+      #      - swiftlint
+      - build-android
+      - build-ios
+      - build-backend
+      - build-web
+#  deploy:
+#    jobs:
+#      - deploy-backend:
+#          filters:
+#            branches:
+#              only: master

@@ -1,0 +1,85 @@
+apply plugin: "kotlin-multiplatform"
+apply plugin: "com.android.application"
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "org.example.kotlin.multiplatform.app"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "0.0.1"
+    }
+
+    signingConfigs {}
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        //This is for MultiplatformSettings
+        debug {
+            // MPP libraries don't currently get this resolution automatically
+            matchingFallbacks = ['release']
+        }
+    }
+
+    packagingOptions {
+        exclude "**/*.kotlin_module"
+    }
+}
+
+kotlin {
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation project(':common')
+            }
+        }
+        
+        androidMain {
+            dependencies {
+                implementation Libs.kotlinStdlib
+                implementation Libs.kotlinxSerializationRuntime
+                implementation Libs.ktorClientAndroid
+                implementation Libs.ktorClientJsonJvm
+                implementation Libs.ktorClientLoggingJvm
+                implementation Libs.slf4jApi
+                implementation Libs.slf4jAndroid
+            }
+        }
+    }
+
+    android {
+
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation Libs.appcompat
+    implementation Libs.cardview
+    implementation Libs.recyclerview
+    implementation Libs.material
+    implementation Libs.constraintlayout
+
+    implementation Libs.kotlinStdlib
+
+    implementation Libs.kotlinxCoroutinesAndroid
+
+    implementation Libs.ktorClientAndroid
+    implementation Libs.ktorClientJsonJvm
+
+    testImplementation Libs.kotlinTest
+    testImplementation Libs.kotlinTestJunit
+    testImplementation Libs.junit
+    testImplementation Libs.mockitoKotlin
+}
