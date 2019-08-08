@@ -123,62 +123,6 @@ xcode {
     target = "KotlinMultiplatformTemplate"
 }
 
-
-//noinspection GroovyAssignabilityCheck
-task packForXCode(type: Sync) {
-    final File frameworkDir = new File(buildDir, "xcode-frameworks")
-    final String mode = System.getenv('CONFIGURATION')?.toUpperCase() ?: 'DEBUG'
-
-    inputs.property "mode", mode
-    dependsOn kotlin.targets.iOS.binaries.findFramework(mode).linkTask
-
-    from { kotlin.targets.iOS.compilations.main.findFramework(mode).outputFile.parentFile }
-    into frameworkDir
-
-    doLast {
-        new File(frameworkDir, 'gradlew').with {
-            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
-            setExecutable(true)
-        }
-    }
-}
-tasks.build.dependsOn packForXCode
-
-//noinspection GroovyAssignabilityCheck
-task packForXCodeTest(type: Sync) {
-    final File frameworkDir = new File(buildDir, "xcode-frameworks-test")
-    final String mode = System.getenv('CONFIGURATION')?.toUpperCase() ?: 'DEBUG'
-
-    inputs.property "mode", mode
-    dependsOn "linkTestDebugFrameworkIos"
-    dependsOn kotlin.targets.iOS.binaries.findTest(mode).linkTask
-
-    from { kotlin.targets.iOS.binaries.findTest(mode).outputFile.parentFile }
-    into frameworkDir
-
-    doLast {
-        new File(frameworkDir, 'gradlew').with {
-            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
-            setExecutable(true)
-        }
-    }
-}
-
-//noinspection GroovyAssignabilityCheck
-task iosTest {
-    def device = project.findProperty("iosDevice")?.toString() ?: "iPhone XR"
-    dependsOn 'linkTestDebugExecutableIos'
-    group = JavaBasePlugin.VERIFICATION_GROUP
-    description = "Runs tests for target 'ios' on an iOS simulator"
-
-    doLast {
-        def binary = kotlin.targets.ios.compilations.test.getBinary('EXECUTABLE', 'DEBUG')
-        exec {
-            commandLine 'xcrun', 'simctl', 'spawn', device, binary.absolutePath
-        }
-    }
-}
-
 detekt {
     input = files(
             "src/commonMain/kotlin",
