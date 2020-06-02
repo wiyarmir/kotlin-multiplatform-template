@@ -7,7 +7,7 @@ object Versions {
     const val html = "0.6.9"
     const val jsoup = "1.9.1"
     const val junit = "4.12"
-    const val kotlin = "1.3.60"
+    const val kotlin = "1.3.72"
     const val react = "16.8.6"
     const val kotlinFrontendPlugin = "0.0.45"
     const val kotlinJsExt = "1.0.1-pre.79-kotlin-1.3.41"
