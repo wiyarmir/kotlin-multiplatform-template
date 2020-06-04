@@ -46,7 +46,6 @@ subprojects {
 
     detekt {
         toolVersion = Versions.detekt
-        filters = ".*/resources/.*,.*/build/.*"
         config = files("$rootDir/detekt.yml")
     }
     dependencies {

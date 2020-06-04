@@ -1,6 +1,6 @@
 object Versions {
     const val androidGradlePlugin = "3.3.0"
-    const val detekt = "1.0.0-RC14"
+    const val detekt = "1.9.1"
     const val ehcache = "3.6.1"
     const val fuel = "1.11.0"
     const val gson = "2.8.0"
