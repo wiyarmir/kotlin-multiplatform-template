@@ -10,6 +10,9 @@ kotlin {
     }
 
     js {
+        browser{
+
+        }
         compileKotlinJs {
             kotlinOptions.metaInfo = true
             kotlinOptions.sourceMap = true
