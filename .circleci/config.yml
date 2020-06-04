@@ -36,7 +36,7 @@ jobs:
   build-android:
     <<: *defaults
     docker:
-      - image: circleci/android:api-28-alpha
+      - image: circleci/android:api-29
     steps:
       - checkout
       - restore_cache:
