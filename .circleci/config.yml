@@ -137,6 +137,9 @@ jobs:
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.5" > ~/.ruby-version
       - restore_cache:
           key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
       - run:
@@ -144,8 +147,11 @@ jobs:
           command: |
             echo 'export BUNDLER_VERSION=$(cat ios/Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
-            sudo gem install bundler
-      - run: cd ios && bundle check || bundle install --path vendor/bundle
+            sudo gem install bundler -v "$(grep -A 1 "BUNDLED WITH" ios/Gemfile.lock | tail -n 1)"
+      - run: |
+          cd ios
+          bundle config set path 'vendor/bundle'
+          bundle check || bundle install
       - save_cache:
           key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
           paths:
