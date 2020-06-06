@@ -26,6 +26,7 @@ dependencies {
     implementation Libs.ktorFreemaker
     implementation Libs.ktorHtmlBuilder
     implementation Libs.ktorServerNetty
+    implementation Libs.ktorSerialization
 
     implementation Libs.logbackClassic
     implementation Libs.fuel

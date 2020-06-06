@@ -18,7 +18,7 @@ import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerialDescriptor
 import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.internal.UnitDescriptor
-import kotlinx.serialization.json.Json.Companion.nonstrict
+import kotlinx.serialization.json.Json.Default.nonstrict
 import org.example.kotlin.multiplatform.api.Api
 import org.example.kotlin.multiplatform.api.Api.V1.Paths.greeting
 import org.example.kotlin.multiplatform.data.responses.HelloResponse
@@ -50,10 +50,7 @@ private fun makeHttpClient(
         }
     }
     Json {
-        serializer = KotlinxSerializer(json = nonstrict).apply {
-            register(HelloResponse.serializer())
-            register(EmptyContentSerializer)
-        }
+        serializer = KotlinxSerializer(json = nonstrict)
     }
     Logging {
         logger = Logger.DEFAULT
