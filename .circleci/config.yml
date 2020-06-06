@@ -141,18 +141,26 @@ jobs:
           name: Set Ruby Version
           command:  echo "ruby-2.5" > ~/.ruby-version
       - restore_cache:
-          key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
+          key: gems-{{ checksum "ios/Gemfile.lock" }}
       - run:
           name: Configure Bundler
           command: sudo gem install bundler -v "$(grep -A 1 "BUNDLED WITH" ios/Gemfile.lock | tail -n 1)"
-      - run: |
-          cd ios
-          bundle config set path 'vendor/bundle'
-          bundle check || bundle install
+      - run:
+          name: Run Bundler
+          command: cd ios && bundle check || bundle install
       - save_cache:
-          key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
+          key: gems-{{ checksum "ios/Gemfile.lock" }}
           paths:
             - ios/vendor/bundle
+      - restore_cache:
+          key: pods-{{ checksum "ios/Podfile.lock" }}
+      - run:
+          name: Pod install
+          command: cd ios && bundle exec pod install
+      - save_cache:
+          key: pods-{{ checksum "ios/Podfile.lock" }}
+          paths:
+            - ios/Pods
       - restore_cache:
           key: gradle-{{ checksum "build.gradle" }}-{{ checksum "common/build.gradle" }}
       - run:
