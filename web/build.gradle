@@ -31,6 +31,8 @@ dependencies {
     // https://github.com/ktorio/ktor/issues/961
     implementation npm("text-encoding", "*")
 
+    implementation(npm("abort-controller", "3.0.0"))
+
     // devDependencies but no dsl
     implementation npm("webpack", "4")
     implementation npm("babel-loader", "8")
