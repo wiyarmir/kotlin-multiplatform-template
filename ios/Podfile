@@ -1,4 +1,8 @@
+use_frameworks!
+
 platform :ios, '12.1'
+
+install! 'cocoapods', :deterministic_uuids => false
 
 target 'KotlinMultiplatformTemplate' do
     pod 'common', :path => '../common'

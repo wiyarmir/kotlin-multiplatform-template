@@ -7,24 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0AA26E04BAB610A26D678F0B /* libPods-KotlinMultiplatformTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E445EB74BB67577D01865C1 /* libPods-KotlinMultiplatformTemplate.a */; };
-		114EB423786D9FE9757F0572 /* CustomMainScope.kt in Sources */ = {isa = PBXBuildFile; fileRef = 92C3B1D9B3DD5910641FC255 /* CustomMainScope.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		146A74EB7C2C2D8CFFE6E9FB /* defaultNetworkConfig.kt in Sources */ = {isa = PBXBuildFile; fileRef = 0EF511067747BBB966DBAA6B /* defaultNetworkConfig.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		1D020DA9B27B82EFA339B960 /* Greeting.kt in Sources */ = {isa = PBXBuildFile; fileRef = D9EF6B60DA949E451A5956D6 /* Greeting.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		20661033D13914C2ABE3A788 /* currentPlatform.kt in Sources */ = {isa = PBXBuildFile; fileRef = CFD9CCA731DAB924CE02AFBC /* currentPlatform.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		344CAF2993633A55C4E48493 /* NetworkDataSource.kt in Sources */ = {isa = PBXBuildFile; fileRef = A6350958C159FC766A28AEE5 /* NetworkDataSource.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		4B49D84FC1A130102CB97FCA /* currentPlatform.kt in Sources */ = {isa = PBXBuildFile; fileRef = 79B89E83D48E22AD01C97C1C /* currentPlatform.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		65A5F1116655A829E9968259 /* defaultNetworkConfig.kt in Sources */ = {isa = PBXBuildFile; fileRef = 03A9E83CD0B2B40F11145B2D /* defaultNetworkConfig.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		68438720D56AC566F9B2C591 /* NetworkRepository.kt in Sources */ = {isa = PBXBuildFile; fileRef = 2871EB1ED68743394430D9B2 /* NetworkRepository.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		6A6F8BF402155473FBEDBC86 /* ErrorResponse.kt in Sources */ = {isa = PBXBuildFile; fileRef = D38000A568F5593E932EC460 /* ErrorResponse.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		90B4AB2640F0E9CF08176153 /* CustomMainScope.kt in Sources */ = {isa = PBXBuildFile; fileRef = 5EB048F20551F58A758700BE /* CustomMainScope.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		AE5D58E83754340703D6B8AD /* CustomMainScope.kt in Sources */ = {isa = PBXBuildFile; fileRef = 13FE23183FDE050291130B6E /* CustomMainScope.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		B2F772FC50E7D08A7AFF5946 /* NotDagger.kt in Sources */ = {isa = PBXBuildFile; fileRef = 1AF70CB837156181F44432DA /* NotDagger.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		BFA05C3203A37D6EC43DDBD8 /* GetHello.kt in Sources */ = {isa = PBXBuildFile; fileRef = 6AB40D71B57F2F8FB383010B /* GetHello.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		C6313A4051D64EE925194183 /* CustomMainScope.kt in Sources */ = {isa = PBXBuildFile; fileRef = E0696363F0F552C411F86B6A /* CustomMainScope.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		DDF4EC6F6218091EC09F89A9 /* Greeting.kt in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6E3A01B90A0F0694FCDE4 /* Greeting.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		E12863E04EA7FD33C2D6D536 /* HelloResponse.kt in Sources */ = {isa = PBXBuildFile; fileRef = C914F9507BB8DEB0CC64136C /* HelloResponse.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		E66E0608D2DC4B7AC294D513 /* HelloPresenter.kt in Sources */ = {isa = PBXBuildFile; fileRef = 0328CAB91FF045BD7C8BE258 /* HelloPresenter.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
+		C392FEAEA06627DAC86B0911 /* Pods_KotlinMultiplatformTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F07733CEEA1077959018A200 /* Pods_KotlinMultiplatformTemplate.framework */; };
 		FAB5AA262273D1190095C309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5AA252273D1190095C309 /* AppDelegate.swift */; };
 		FAB5AA282273D1190095C309 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5AA272273D1190095C309 /* MainViewController.swift */; };
 		FAB5AA2B2273D1190095C309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB5AA292273D1190095C309 /* Main.storyboard */; };
@@ -32,8 +15,6 @@
 		FAB5AA302273D11A0095C309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB5AA2E2273D11A0095C309 /* LaunchScreen.storyboard */; };
 		FAB5AA3B2273D11A0095C309 /* KotlinMultiplatformProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5AA3A2273D11A0095C309 /* KotlinMultiplatformProjectTests.swift */; };
 		FAB5AA462273D11A0095C309 /* KotlinMultiplatformTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5AA452273D11A0095C309 /* KotlinMultiplatformTemplateUITests.swift */; };
-		FC06FD392E1A976B595000D3 /* currentPlatform.kt in Sources */ = {isa = PBXBuildFile; fileRef = B80A499A9062D0BF49B97AAD /* currentPlatform.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
-		FD196E5C62705C8721537363 /* Paths.kt in Sources */ = {isa = PBXBuildFile; fileRef = 41ED1642DAFBCD5B378D724F /* Paths.kt */; settings = {COMPILER_FLAGS = "-w"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,28 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0328CAB91FF045BD7C8BE258 /* HelloPresenter.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HelloPresenter.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/presenter/HelloPresenter.kt; sourceTree = "<group>"; };
-		03A9E83CD0B2B40F11145B2D /* defaultNetworkConfig.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = defaultNetworkConfig.kt; path = ../common/src/commonDebug/kotlin/org/example/kotlin/multiplatform/data/defaultNetworkConfig.kt; sourceTree = "<group>"; };
-		0EF511067747BBB966DBAA6B /* defaultNetworkConfig.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = defaultNetworkConfig.kt; path = ../common/src/commonRelease/kotlin/org/example/kotlin/multiplatform/data/defaultNetworkConfig.kt; sourceTree = "<group>"; };
-		13FE23183FDE050291130B6E /* CustomMainScope.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CustomMainScope.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/coroutines/CustomMainScope.kt; sourceTree = "<group>"; };
-		1AF70CB837156181F44432DA /* NotDagger.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NotDagger.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/di/NotDagger.kt; sourceTree = "<group>"; };
-		2871EB1ED68743394430D9B2 /* NetworkRepository.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NetworkRepository.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/repository/NetworkRepository.kt; sourceTree = "<group>"; };
-		41ED1642DAFBCD5B378D724F /* Paths.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Paths.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/api/Paths.kt; sourceTree = "<group>"; };
-		4CB6E3A01B90A0F0694FCDE4 /* Greeting.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Greeting.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/repository/model/Greeting.kt; sourceTree = "<group>"; };
-		5EB048F20551F58A758700BE /* CustomMainScope.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CustomMainScope.kt; path = ../common/src/jsMain/kotlin/org/example/kotlin/multiplatform/coroutines/CustomMainScope.kt; sourceTree = "<group>"; };
-		6AB40D71B57F2F8FB383010B /* GetHello.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GetHello.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/usecase/GetHello.kt; sourceTree = "<group>"; };
-		79B89E83D48E22AD01C97C1C /* currentPlatform.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = currentPlatform.kt; path = ../common/src/iOSMain/kotlin/org/example/kotlin/multiplatform/presenter/currentPlatform.kt; sourceTree = "<group>"; };
-		92C3B1D9B3DD5910641FC255 /* CustomMainScope.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CustomMainScope.kt; path = ../common/src/jvmMain/kotlin/org/example/kotlin/multiplatform/coroutines/CustomMainScope.kt; sourceTree = "<group>"; };
-		97EDEB862924ABD409382E83 /* Pods-KotlinMultiplatformTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotlinMultiplatformTemplate.release.xcconfig"; path = "Target Support Files/Pods-KotlinMultiplatformTemplate/Pods-KotlinMultiplatformTemplate.release.xcconfig"; sourceTree = "<group>"; };
-		9C031104080AF4FB2C2D927B /* Pods-KotlinMultiplatformTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotlinMultiplatformTemplate.debug.xcconfig"; path = "Target Support Files/Pods-KotlinMultiplatformTemplate/Pods-KotlinMultiplatformTemplate.debug.xcconfig"; sourceTree = "<group>"; };
-		9E445EB74BB67577D01865C1 /* libPods-KotlinMultiplatformTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KotlinMultiplatformTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6350958C159FC766A28AEE5 /* NetworkDataSource.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NetworkDataSource.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/data/NetworkDataSource.kt; sourceTree = "<group>"; };
-		B80A499A9062D0BF49B97AAD /* currentPlatform.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = currentPlatform.kt; path = ../common/src/jvmMain/kotlin/org/example/kotlin/multiplatform/presenter/currentPlatform.kt; sourceTree = "<group>"; };
-		C914F9507BB8DEB0CC64136C /* HelloResponse.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HelloResponse.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/data/responses/HelloResponse.kt; sourceTree = "<group>"; };
-		CFD9CCA731DAB924CE02AFBC /* currentPlatform.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = currentPlatform.kt; path = ../common/src/jsMain/kotlin/org/example/kotlin/multiplatform/presenter/currentPlatform.kt; sourceTree = "<group>"; };
-		D38000A568F5593E932EC460 /* ErrorResponse.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ErrorResponse.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/data/responses/ErrorResponse.kt; sourceTree = "<group>"; };
-		D9EF6B60DA949E451A5956D6 /* Greeting.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Greeting.kt; path = ../common/src/commonMain/kotlin/org/example/kotlin/multiplatform/data/model/Greeting.kt; sourceTree = "<group>"; };
-		E0696363F0F552C411F86B6A /* CustomMainScope.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CustomMainScope.kt; path = ../common/src/iOSMain/kotlin/org/example/kotlin/multiplatform/coroutines/CustomMainScope.kt; sourceTree = "<group>"; };
+		3A1CD4DF0C90CF844B5E0692 /* Pods-KotlinMultiplatformTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotlinMultiplatformTemplate.debug.xcconfig"; path = "Target Support Files/Pods-KotlinMultiplatformTemplate/Pods-KotlinMultiplatformTemplate.debug.xcconfig"; sourceTree = "<group>"; };
+		524EC29C56EE84996426FD50 /* Pods-KotlinMultiplatformTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotlinMultiplatformTemplate.release.xcconfig"; path = "Target Support Files/Pods-KotlinMultiplatformTemplate/Pods-KotlinMultiplatformTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		F07733CEEA1077959018A200 /* Pods_KotlinMultiplatformTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KotlinMultiplatformTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5AA222273D1190095C309 /* KotlinMultiplatformTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotlinMultiplatformTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5AA252273D1190095C309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB5AA272273D1190095C309 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AA26E04BAB610A26D678F0B /* libPods-KotlinMultiplatformTemplate.a in Frameworks */,
+				C392FEAEA06627DAC86B0911 /* Pods_KotlinMultiplatformTemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,527 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B8AC9702CAFD630001A7878 /* commonRelease */ = {
+		307F8750BFA6B59B2CDD381B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				182527B88622AE21566FBFD5 /* kotlin */,
-			);
-			name = commonRelease;
-			sourceTree = "<group>";
-		};
-		13CD55D1C17796EE39ABD200 /* example */ = {
-			isa = PBXGroup;
-			children = (
-				2E7846745E81830656D163FF /* kotlin */,
-			);
-			name = example;
-			sourceTree = "<group>";
-		};
-		15B21F5A3C87C964ED109EF4 /* example */ = {
-			isa = PBXGroup;
-			children = (
-				26637B9E74C6BEF6DA356246 /* kotlin */,
-			);
-			name = example;
-			sourceTree = "<group>";
-		};
-		17DD22A0B336CE7C7B603835 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				D20CEF83C404116C1BE9D739 /* org */,
-				746812DB3D4016A328D50053 /* es */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		182527B88622AE21566FBFD5 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				A6B925CED0ABB5A96EBEF4B7 /* org */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		1A8EA94CF8A5C755BE8814D1 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				93F73F92F017CB81486A95ED /* multiplatform */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		2239CB67E8FA88E671B115C0 /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0328CAB91FF045BD7C8BE258 /* HelloPresenter.kt */,
-			);
-			name = presenter;
-			sourceTree = "<group>";
-		};
-		26637B9E74C6BEF6DA356246 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				FE552221814D5C18C334EEAC /* multiplatform */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		27D36C4027F00FE7574EA1E3 /* iOSMain */ = {
-			isa = PBXGroup;
-			children = (
-				9722DB917253184BA4670610 /* kotlin */,
-			);
-			name = iOSMain;
-			sourceTree = "<group>";
-		};
-		2A67A96A96B52A1F3DDBCF9E /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				3FE5CFA1EBF093A36D0DB6A7 /* org */,
-				54301AD702CAADFAF5FFCDBF /* es */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		2CDED23ED6047E692BED7369 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				667C7A73D8B3BEA6123B75B3 /* org */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		2E7846745E81830656D163FF /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				31CE69B5A98316C6B0491A6D /* multiplatform */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		31CE69B5A98316C6B0491A6D /* multiplatform */ = {
-			isa = PBXGroup;
-			children = (
-				EBB38C1BA7EE9BD8DD71B138 /* presenter */,
-				6E35B1C94CF17F87E30FC4AA /* coroutines */,
-			);
-			name = multiplatform;
-			sourceTree = "<group>";
-		};
-		33A8574377FA94AFC4C98415 /* requests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = requests;
-			sourceTree = "<group>";
-		};
-		3C31043168782F485511E8A5 /* jsMain */ = {
-			isa = PBXGroup;
-			children = (
-				17DD22A0B336CE7C7B603835 /* kotlin */,
-			);
-			name = jsMain;
-			sourceTree = "<group>";
-		};
-		3FE5CFA1EBF093A36D0DB6A7 /* org */ = {
-			isa = PBXGroup;
-			children = (
-				15B21F5A3C87C964ED109EF4 /* example */,
-			);
-			name = org;
-			sourceTree = "<group>";
-		};
-		430D1BA5BA6787472B0835BF /* keynotedex */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = keynotedex;
-			sourceTree = "<group>";
-		};
-		4432AFF5EEE4235E40EE5DB2 /* guillermoorellana */ = {
-			isa = PBXGroup;
-			children = (
-				86403276F2E16AA6F553B5B2 /* keynotedex */,
-			);
-			name = guillermoorellana;
-			sourceTree = "<group>";
-		};
-		452B8A7C1EA4EA28B228EC0C /* responses */ = {
-			isa = PBXGroup;
-			children = (
-				C914F9507BB8DEB0CC64136C /* HelloResponse.kt */,
-				D38000A568F5593E932EC460 /* ErrorResponse.kt */,
-			);
-			name = responses;
-			sourceTree = "<group>";
-		};
-		4EF8401B970FC374738AE8EA /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				94297A6B143A2F93EE518BE7 /* multiplatform */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		54071C32475493772B4F8675 /* repository */ = {
-			isa = PBXGroup;
-			children = (
-				2871EB1ED68743394430D9B2 /* NetworkRepository.kt */,
-				5B24A19131BCB31035C4CE4E /* model */,
-			);
-			name = repository;
-			sourceTree = "<group>";
-		};
-		54301AD702CAADFAF5FFCDBF /* es */ = {
-			isa = PBXGroup;
-			children = (
-				84CC0B1594346278CF2C6612 /* guillermoorellana */,
-			);
-			name = es;
-			sourceTree = "<group>";
-		};
-		5446D2642E2A1F6C564D2D5C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9E445EB74BB67577D01865C1 /* libPods-KotlinMultiplatformTemplate.a */,
+				F07733CEEA1077959018A200 /* Pods_KotlinMultiplatformTemplate.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5B24A19131BCB31035C4CE4E /* model */ = {
-			isa = PBXGroup;
-			children = (
-				4CB6E3A01B90A0F0694FCDE4 /* Greeting.kt */,
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
-		5F9CE7AD8030DC64D1670868 /* multiplatform */ = {
-			isa = PBXGroup;
-			children = (
-				E3E549C587A1310B7CAC9F63 /* presenter */,
-				7FFD1A288F96C77864592702 /* coroutines */,
-			);
-			name = multiplatform;
-			sourceTree = "<group>";
-		};
-		60D36FB6675067145DBB1AD7 /* di */ = {
-			isa = PBXGroup;
-			children = (
-				1AF70CB837156181F44432DA /* NotDagger.kt */,
-			);
-			name = di;
-			sourceTree = "<group>";
-		};
-		667C7A73D8B3BEA6123B75B3 /* org */ = {
-			isa = PBXGroup;
-			children = (
-				955D65807555F02E867A86AF /* example */,
-			);
-			name = org;
-			sourceTree = "<group>";
-		};
-		69063CD48BE0FA88E523CC14 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				D9EF6B60DA949E451A5956D6 /* Greeting.kt */,
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
-		693B97386B01E4160B29B129 /* multiplatform */ = {
-			isa = PBXGroup;
-			children = (
-				8FC6375D3931A6DFC97ACF22 /* presenter */,
-				846BEB94B489C481D85F75C7 /* coroutines */,
-			);
-			name = multiplatform;
-			sourceTree = "<group>";
-		};
-		6E35B1C94CF17F87E30FC4AA /* coroutines */ = {
-			isa = PBXGroup;
-			children = (
-				5EB048F20551F58A758700BE /* CustomMainScope.kt */,
-			);
-			name = coroutines;
-			sourceTree = "<group>";
-		};
-		7385B5CB8BC172E2706FB48E /* commonMain */ = {
-			isa = PBXGroup;
-			children = (
-				78BFB3AB01EA3647A5753234 /* kotlin */,
-			);
-			name = commonMain;
-			sourceTree = "<group>";
-		};
-		746812DB3D4016A328D50053 /* es */ = {
-			isa = PBXGroup;
-			children = (
-				C99A3C8EAA0390C67C751A55 /* guillermoorellana */,
-			);
-			name = es;
-			sourceTree = "<group>";
-		};
-		7594F91A34763C8FE07F6F8A /* data */ = {
-			isa = PBXGroup;
-			children = (
-				03A9E83CD0B2B40F11145B2D /* defaultNetworkConfig.kt */,
-			);
-			name = data;
-			sourceTree = "<group>";
-		};
-		75FDACABB8BFC1D4DD9516D5 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				452B8A7C1EA4EA28B228EC0C /* responses */,
-				A6350958C159FC766A28AEE5 /* NetworkDataSource.kt */,
-				33A8574377FA94AFC4C98415 /* requests */,
-				69063CD48BE0FA88E523CC14 /* model */,
-			);
-			name = data;
-			sourceTree = "<group>";
-		};
-		78BFB3AB01EA3647A5753234 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				890A40250666FA021DB4D69B /* org */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		7AF51DB8F2C1CD0B38F815C3 /* keynotedex */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = keynotedex;
-			sourceTree = "<group>";
-		};
-		7DFEA0CC8FCC6510F977AC5E /* org */ = {
-			isa = PBXGroup;
-			children = (
-				DF3046B78A8CEE2D25F51DD0 /* example */,
-			);
-			name = org;
-			sourceTree = "<group>";
-		};
-		7FFD1A288F96C77864592702 /* coroutines */ = {
-			isa = PBXGroup;
-			children = (
-				E0696363F0F552C411F86B6A /* CustomMainScope.kt */,
-			);
-			name = coroutines;
-			sourceTree = "<group>";
-		};
-		846BEB94B489C481D85F75C7 /* coroutines */ = {
-			isa = PBXGroup;
-			children = (
-				92C3B1D9B3DD5910641FC255 /* CustomMainScope.kt */,
-			);
-			name = coroutines;
-			sourceTree = "<group>";
-		};
-		84CC0B1594346278CF2C6612 /* guillermoorellana */ = {
-			isa = PBXGroup;
-			children = (
-				430D1BA5BA6787472B0835BF /* keynotedex */,
-			);
-			name = guillermoorellana;
-			sourceTree = "<group>";
-		};
-		86403276F2E16AA6F553B5B2 /* keynotedex */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = keynotedex;
-			sourceTree = "<group>";
-		};
-		890A40250666FA021DB4D69B /* org */ = {
-			isa = PBXGroup;
-			children = (
-				DDFB080F8E2316314E1BC049 /* example */,
-			);
-			name = org;
-			sourceTree = "<group>";
-		};
-		8FC6375D3931A6DFC97ACF22 /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B80A499A9062D0BF49B97AAD /* currentPlatform.kt */,
-			);
-			name = presenter;
-			sourceTree = "<group>";
-		};
-		91B05FD3AFBDE4D7C035E070 /* coroutines */ = {
-			isa = PBXGroup;
-			children = (
-				13FE23183FDE050291130B6E /* CustomMainScope.kt */,
-			);
-			name = coroutines;
-			sourceTree = "<group>";
-		};
-		93F73F92F017CB81486A95ED /* multiplatform */ = {
-			isa = PBXGroup;
-			children = (
-				54071C32475493772B4F8675 /* repository */,
-				60D36FB6675067145DBB1AD7 /* di */,
-				2239CB67E8FA88E671B115C0 /* presenter */,
-				DA98E56615B2ADCF08C3F5F0 /* api */,
-				91B05FD3AFBDE4D7C035E070 /* coroutines */,
-				75FDACABB8BFC1D4DD9516D5 /* data */,
-				96804816279A7129F0F384DF /* usecase */,
-			);
-			name = multiplatform;
-			sourceTree = "<group>";
-		};
-		94297A6B143A2F93EE518BE7 /* multiplatform */ = {
-			isa = PBXGroup;
-			children = (
-				B4F6C285C197928A481205CD /* data */,
-			);
-			name = multiplatform;
-			sourceTree = "<group>";
-		};
-		955D65807555F02E867A86AF /* example */ = {
-			isa = PBXGroup;
-			children = (
-				FBEAE82679B6FCCF24ABDBAC /* kotlin */,
-			);
-			name = example;
-			sourceTree = "<group>";
-		};
-		96804816279A7129F0F384DF /* usecase */ = {
-			isa = PBXGroup;
-			children = (
-				6AB40D71B57F2F8FB383010B /* GetHello.kt */,
-			);
-			name = usecase;
-			sourceTree = "<group>";
-		};
-		9722DB917253184BA4670610 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				7DFEA0CC8FCC6510F977AC5E /* org */,
-				A85944BBE690AEE04F8649E5 /* es */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		A1B0582BEEE5E1CA3F8D0AED /* Kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				0B8AC9702CAFD630001A7878 /* commonRelease */,
-				27D36C4027F00FE7574EA1E3 /* iOSMain */,
-				FD685059B403E73424B14C25 /* commonDebug */,
-				7385B5CB8BC172E2706FB48E /* commonMain */,
-				FE499F0D6CFFD842FE07C40D /* jvmMain */,
-				3C31043168782F485511E8A5 /* jsMain */,
-			);
-			name = Kotlin;
-			sourceTree = "<group>";
-		};
-		A6B925CED0ABB5A96EBEF4B7 /* org */ = {
-			isa = PBXGroup;
-			children = (
-				B792C3AB4C90F485B74159E8 /* example */,
-			);
-			name = org;
-			sourceTree = "<group>";
-		};
-		A85944BBE690AEE04F8649E5 /* es */ = {
-			isa = PBXGroup;
-			children = (
-				4432AFF5EEE4235E40EE5DB2 /* guillermoorellana */,
-			);
-			name = es;
-			sourceTree = "<group>";
-		};
-		B4F6C285C197928A481205CD /* data */ = {
-			isa = PBXGroup;
-			children = (
-				0EF511067747BBB966DBAA6B /* defaultNetworkConfig.kt */,
-			);
-			name = data;
-			sourceTree = "<group>";
-		};
-		B792C3AB4C90F485B74159E8 /* example */ = {
-			isa = PBXGroup;
-			children = (
-				4EF8401B970FC374738AE8EA /* kotlin */,
-			);
-			name = example;
-			sourceTree = "<group>";
-		};
-		C99A3C8EAA0390C67C751A55 /* guillermoorellana */ = {
-			isa = PBXGroup;
-			children = (
-				7AF51DB8F2C1CD0B38F815C3 /* keynotedex */,
-			);
-			name = guillermoorellana;
-			sourceTree = "<group>";
-		};
-		D20CEF83C404116C1BE9D739 /* org */ = {
-			isa = PBXGroup;
-			children = (
-				13CD55D1C17796EE39ABD200 /* example */,
-			);
-			name = org;
 			sourceTree = "<group>";
 		};
 		D746DFDD63567F5994850DED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9C031104080AF4FB2C2D927B /* Pods-KotlinMultiplatformTemplate.debug.xcconfig */,
-				97EDEB862924ABD409382E83 /* Pods-KotlinMultiplatformTemplate.release.xcconfig */,
+				3A1CD4DF0C90CF844B5E0692 /* Pods-KotlinMultiplatformTemplate.debug.xcconfig */,
+				524EC29C56EE84996426FD50 /* Pods-KotlinMultiplatformTemplate.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		DA98E56615B2ADCF08C3F5F0 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				41ED1642DAFBCD5B378D724F /* Paths.kt */,
-			);
-			name = api;
-			sourceTree = "<group>";
-		};
-		DDFB080F8E2316314E1BC049 /* example */ = {
-			isa = PBXGroup;
-			children = (
-				1A8EA94CF8A5C755BE8814D1 /* kotlin */,
-			);
-			name = example;
-			sourceTree = "<group>";
-		};
-		DF3046B78A8CEE2D25F51DD0 /* example */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB4AAC72CA8E34F3413A65 /* kotlin */,
-			);
-			name = example;
-			sourceTree = "<group>";
-		};
-		E3E549C587A1310B7CAC9F63 /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				79B89E83D48E22AD01C97C1C /* currentPlatform.kt */,
-			);
-			name = presenter;
-			sourceTree = "<group>";
-		};
-		E9EB4AAC72CA8E34F3413A65 /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				5F9CE7AD8030DC64D1670868 /* multiplatform */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		EBB38C1BA7EE9BD8DD71B138 /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				CFD9CCA731DAB924CE02AFBC /* currentPlatform.kt */,
-			);
-			name = presenter;
 			sourceTree = "<group>";
 		};
 		FAB5AA192273D1190095C309 = {
@@ -648,8 +104,7 @@
 				FAB5AA442273D11A0095C309 /* KotlinMultiplatformTemplateUITests */,
 				FAB5AA232273D1190095C309 /* Products */,
 				D746DFDD63567F5994850DED /* Pods */,
-				A1B0582BEEE5E1CA3F8D0AED /* Kotlin */,
-				5446D2642E2A1F6C564D2D5C /* Frameworks */,
+				307F8750BFA6B59B2CDD381B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -694,38 +149,6 @@
 			path = KotlinMultiplatformTemplateUITests;
 			sourceTree = "<group>";
 		};
-		FBEAE82679B6FCCF24ABDBAC /* kotlin */ = {
-			isa = PBXGroup;
-			children = (
-				693B97386B01E4160B29B129 /* multiplatform */,
-			);
-			name = kotlin;
-			sourceTree = "<group>";
-		};
-		FD685059B403E73424B14C25 /* commonDebug */ = {
-			isa = PBXGroup;
-			children = (
-				2A67A96A96B52A1F3DDBCF9E /* kotlin */,
-			);
-			name = commonDebug;
-			sourceTree = "<group>";
-		};
-		FE499F0D6CFFD842FE07C40D /* jvmMain */ = {
-			isa = PBXGroup;
-			children = (
-				2CDED23ED6047E692BED7369 /* kotlin */,
-			);
-			name = jvmMain;
-			sourceTree = "<group>";
-		};
-		FE552221814D5C18C334EEAC /* multiplatform */ = {
-			isa = PBXGroup;
-			children = (
-				7594F91A34763C8FE07F6F8A /* data */,
-			);
-			name = multiplatform;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -733,7 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAB5AA4A2273D11A0095C309 /* Build configuration list for PBXNativeTarget "KotlinMultiplatformTemplate" */;
 			buildPhases = (
-				F277217C0D198B01477F9937 /* [CP] Check Pods Manifest.lock */,
+				C7AE45EC73EBF85966751D50 /* [CP] Check Pods Manifest.lock */,
 				FAB5AA1E2273D1190095C309 /* Sources */,
 				FAB5AA1F2273D1190095C309 /* Frameworks */,
 				FAB5AA202273D1190095C309 /* Resources */,
@@ -854,7 +277,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F277217C0D198B01477F9937 /* [CP] Check Pods Manifest.lock */ = {
+		C7AE45EC73EBF85966751D50 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -885,25 +308,6 @@
 			files = (
 				FAB5AA282273D1190095C309 /* MainViewController.swift in Sources */,
 				FAB5AA262273D1190095C309 /* AppDelegate.swift in Sources */,
-				146A74EB7C2C2D8CFFE6E9FB /* defaultNetworkConfig.kt in Sources */,
-				4B49D84FC1A130102CB97FCA /* currentPlatform.kt in Sources */,
-				C6313A4051D64EE925194183 /* CustomMainScope.kt in Sources */,
-				65A5F1116655A829E9968259 /* defaultNetworkConfig.kt in Sources */,
-				68438720D56AC566F9B2C591 /* NetworkRepository.kt in Sources */,
-				DDF4EC6F6218091EC09F89A9 /* Greeting.kt in Sources */,
-				B2F772FC50E7D08A7AFF5946 /* NotDagger.kt in Sources */,
-				E66E0608D2DC4B7AC294D513 /* HelloPresenter.kt in Sources */,
-				FD196E5C62705C8721537363 /* Paths.kt in Sources */,
-				AE5D58E83754340703D6B8AD /* CustomMainScope.kt in Sources */,
-				E12863E04EA7FD33C2D6D536 /* HelloResponse.kt in Sources */,
-				6A6F8BF402155473FBEDBC86 /* ErrorResponse.kt in Sources */,
-				344CAF2993633A55C4E48493 /* NetworkDataSource.kt in Sources */,
-				1D020DA9B27B82EFA339B960 /* Greeting.kt in Sources */,
-				BFA05C3203A37D6EC43DDBD8 /* GetHello.kt in Sources */,
-				FC06FD392E1A976B595000D3 /* currentPlatform.kt in Sources */,
-				114EB423786D9FE9757F0572 /* CustomMainScope.kt in Sources */,
-				20661033D13914C2ABE3A788 /* currentPlatform.kt in Sources */,
-				90B4AB2640F0E9CF08176153 /* CustomMainScope.kt in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,7 +480,7 @@
 		};
 		FAB5AA4B2273D11A0095C309 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C031104080AF4FB2C2D927B /* Pods-KotlinMultiplatformTemplate.debug.xcconfig */;
+			baseConfigurationReference = 3A1CD4DF0C90CF844B5E0692 /* Pods-KotlinMultiplatformTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -1096,7 +500,7 @@
 		};
 		FAB5AA4C2273D11A0095C309 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97EDEB862924ABD409382E83 /* Pods-KotlinMultiplatformTemplate.release.xcconfig */;
+			baseConfigurationReference = 524EC29C56EE84996426FD50 /* Pods-KotlinMultiplatformTemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
