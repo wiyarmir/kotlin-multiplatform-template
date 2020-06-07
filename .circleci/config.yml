@@ -130,7 +130,7 @@ jobs:
 
   build-ios:
     macos:
-      xcode: "11.5.0"
+      xcode: "11.4.1"
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: tests
