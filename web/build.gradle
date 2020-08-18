@@ -33,15 +33,15 @@ dependencies {
     implementation(npm("abort-controller", "3.0.0"))
 
     // devDependencies but no dsl
-    implementation npm("webpack", "4")
-    implementation npm("babel-loader", "8")
-    implementation npm("@babel/core", "7")
-    implementation npm("@babel/preset-env", "7")
-    implementation npm("css-loader", "*")
-    implementation npm("style-loader", "*")
-    implementation npm("html-loader", "*")
-    implementation npm("source-map-loader", "*")
-    implementation npm("karma", "*")
+    implementation devNpm("webpack", "4.42.1")
+    implementation devNpm("babel-loader", "8")
+    implementation devNpm("@babel/core", "7")
+    implementation devNpm("@babel/preset-env", "7")
+    implementation devNpm("css-loader", "*")
+    implementation devNpm("style-loader", "*")
+    implementation devNpm("html-loader", "*")
+    implementation devNpm("source-map-loader", "*")
+    implementation devNpm("karma", "*")
 }
 
 kotlin {
