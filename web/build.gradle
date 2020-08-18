@@ -17,7 +17,6 @@ dependencies {
     implementation Libs.kotlinxHtmlJs
     implementation Libs.kotlinxCoroutinesCoreCommon
     implementation Libs.kotlinxCoroutinesCoreJs
-    implementation Libs.kotlinxSerializationRuntimeJs
 
     implementation Libs.kotlinExtensions
     implementation Libs.kotlinReact

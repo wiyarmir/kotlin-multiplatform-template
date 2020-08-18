@@ -12,10 +12,10 @@ object Versions {
     const val kotlinJsExt = "1.0.1-pre.79-kotlin-1.3.41"
     const val kotlinWrapper = "$react-pre.79-kotlin-1.3.41"
     const val kotlinxCoroutines = "1.3.7"
-    const val ktor = "1.3.2"
+    const val ktor = "1.3.2-1.4.0-rc"
     const val logback = "1.2.1"
     const val mockitoKotlin = "2.1.0"
-    const val serialization = "0.20.0"
+    const val serialization = "1.0.0-RC"
     const val squash = "0.2.4"
     const val reactRouterDom = "4.3.1"
     const val kotlinReactRouterDom = "$reactRouterDom-pre.79-kotlin-1.3.41"
@@ -61,13 +61,7 @@ object Libs {
     const val kotlinxHtmlJs = "org.jetbrains.kotlinx:kotlinx-html-js:${Versions.html}"
 
     const val kotlinxSerializationRuntime =
-        "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.serialization}"
-    const val kotlinxSerializationRuntimeCommon =
-        "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${Versions.serialization}"
-    const val kotlinxSerializationRuntimeJs =
-        "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${Versions.serialization}"
-    const val kotlinxSerializationRuntimeNative =
-        "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:${Versions.serialization}"
+        "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.serialization}"
 
     const val kaml = "com.charleskorn.kaml:kaml:0.11.0"
 
