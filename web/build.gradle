@@ -11,12 +11,10 @@ repositories {
 dependencies {
     implementation project(":common")
 
-    implementation Libs.kotlinStdlibJs
     testImplementation Libs.kotlinTestJs
 
     implementation Libs.kotlinxHtmlJs
     implementation Libs.kotlinxCoroutinesCoreCommon
-    implementation Libs.kotlinxCoroutinesCoreJs
 
     implementation Libs.kotlinExtensions
     implementation Libs.kotlinReact

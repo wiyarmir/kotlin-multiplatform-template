@@ -41,8 +41,6 @@ object Libs {
     const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}"
 
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
-    const val kotlinStdlibCommon = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.kotlin}"
-    const val kotlinStdlibJs = "org.jetbrains.kotlin:kotlin-stdlib-js:${Versions.kotlin}"
 
     const val kotlinTest = "org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}"
     const val kotlinTestCommon = "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
@@ -51,9 +49,6 @@ object Libs {
 
     const val kotlinxCoroutinesCoreCommon =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${Versions.kotlinxCoroutines}"
-    const val kotlinxCoroutinesCoreJs = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${Versions.kotlinxCoroutines}"
-    const val kotlinxCoroutinesCoreNative =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${Versions.kotlinxCoroutines}"
     const val kotlinxCoroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinxCoroutines}"
     const val kotlinxCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinxCoroutines}"
@@ -75,21 +70,12 @@ object Libs {
 
     const val ktorClientAuth = "io.ktor:ktor-client-auth:${Versions.ktor}"
     const val ktorClientJson = "io.ktor:ktor-client-json:${Versions.ktor}"
-    const val ktorClientJsonJvm = "io.ktor:ktor-client-json-jvm:${Versions.ktor}"
-    const val ktorClientJsonJs = "io.ktor:ktor-client-json-js:${Versions.ktor}"
-    const val ktorClientJsonNative = "io.ktor:ktor-client-json-native:${Versions.ktor}"
     const val ktorClientSerialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
-    const val ktorClientSerializationJs = "io.ktor:ktor-client-serialization-js:${Versions.ktor}"
-    const val ktorClientSerializationNative = "io.ktor:ktor-client-serialization-native:${Versions.ktor}"
-    const val ktorClientSerializationJvm = "io.ktor:ktor-client-serialization-jvm:${Versions.ktor}"
     const val ktorClientCore = "io.ktor:ktor-client-core:${Versions.ktor}"
     const val ktorClientAndroid = "io.ktor:ktor-client-android:${Versions.ktor}"
     const val ktorClientIos = "io.ktor:ktor-client-ios:${Versions.ktor}"
     const val ktorClientJs = "io.ktor:ktor-client-js:${Versions.ktor}"
     const val ktorClientLogging = "io.ktor:ktor-client-logging:${Versions.ktor}"
-    const val ktorClientLoggingJvm = "io.ktor:ktor-client-logging-jvm:${Versions.ktor}"
-    const val ktorClientLoggingJs = "io.ktor:ktor-client-logging-js:${Versions.ktor}"
-    const val ktorClientLoggingNative = "io.ktor:ktor-client-logging-native:${Versions.ktor}"
     const val ktorClientOkHttp = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
 
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"

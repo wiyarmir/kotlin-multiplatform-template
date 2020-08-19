@@ -34,7 +34,6 @@ kotlin {
             }
 
             dependencies {
-                api Libs.kotlinStdlibCommon
                 api Libs.kotlinxCoroutinesCoreCommon
                 api Libs.ktorClientCore
                 api Libs.ktorClientJson
@@ -51,17 +50,12 @@ kotlin {
 
         iOSMain {
             dependencies {
-                api Libs.kotlinxCoroutinesCoreNative
                 api Libs.ktorClientIos
             }
         }
 
         jvmMain {
             dependencies {
-                api Libs.kotlinStdlib
-                api Libs.ktorClientJsonJvm
-                api Libs.ktorClientLoggingJvm
-                api Libs.ktorClientSerializationJvm
             }
         }
 
@@ -75,17 +69,11 @@ kotlin {
 
         jsMain {
             dependencies {
-                api Libs.kotlinStdlibJs
-                api Libs.ktorClientJs
-                api Libs.ktorClientJsonJs
-                api Libs.ktorClientLoggingJs
-                api Libs.ktorClientSerializationJs
             }
         }
 
         jsTest {
             dependencies {
-                api Libs.kotlinTestJs
             }
         }
     }
