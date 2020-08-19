@@ -1,5 +1,5 @@
 [![CircleCI Badge](https://circleci.com/gh/wiyarmir/kotlin-multiplatform-template.svg?style=svg)](https://circleci.com/gh/wiyarmir/kotlin-multiplatform-template)
-![Kotlin Version](https://img.shields.io/badge/kotlin-v1.3.72-F88909?style=flat&logo=kotlin)
+![Kotlin Version](https://img.shields.io/badge/kotlin-v1.4.0-F88909?style=flat&logo=kotlin)
 
 # Kotlin Multiplatform Template
 
