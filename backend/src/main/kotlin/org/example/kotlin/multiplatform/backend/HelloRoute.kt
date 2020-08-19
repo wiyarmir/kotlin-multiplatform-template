@@ -13,8 +13,6 @@ import org.example.kotlin.multiplatform.data.responses.HelloResponse
 @UseExperimental(KtorExperimentalLocationsAPI::class)
 fun Route.hello() {
 
-    JsonSerializableConverter.register(HelloResponse.serializer())
-
     accept(ContentType.Application.Json) {
         get<Api.V1.HelloEndpoint> { (who) ->
             val message = if (who == null) "Unknown entity" else "Nice to meet you $who"

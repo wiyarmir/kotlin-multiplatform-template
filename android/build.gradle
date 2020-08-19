@@ -43,13 +43,6 @@ kotlin {
         
         androidMain {
             dependencies {
-                implementation Libs.kotlinStdlib
-                implementation Libs.kotlinxSerializationRuntime
-                implementation Libs.ktorClientAndroid
-                implementation Libs.ktorClientJsonJvm
-                implementation Libs.ktorClientLoggingJvm
-                implementation Libs.slf4jApi
-                implementation Libs.slf4jAndroid
             }
         }
     }
@@ -76,7 +69,6 @@ dependencies {
     implementation Libs.kotlinxCoroutinesAndroid
 
     implementation Libs.ktorClientAndroid
-    implementation Libs.ktorClientJsonJvm
 
     testImplementation Libs.kotlinTest
     testImplementation Libs.kotlinTestJunit

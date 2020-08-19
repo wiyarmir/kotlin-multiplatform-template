@@ -9,7 +9,6 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:$Versions.kotlinFrontendPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.kotlin"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$Versions.kotlin"
         classpath "com.android.tools.build:gradle:$Versions.androidGradlePlugin"
@@ -46,7 +45,6 @@ subprojects {
 
     detekt {
         toolVersion = Versions.detekt
-        filters = ".*/resources/.*,.*/build/.*"
         config = files("$rootDir/detekt.yml")
     }
     dependencies {

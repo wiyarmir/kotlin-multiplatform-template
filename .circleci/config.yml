@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/code
   docker:
-    - image: circleci/jdk8:0.1.1
+    - image: circleci/openjdk:8-jdk
   environment:
     JVM_OPTS: -Xmx3200m
     GRADLE_OPTS: '-Dorg.gradle.daemon=false'
@@ -36,7 +36,7 @@ jobs:
   build-android:
     <<: *defaults
     docker:
-      - image: circleci/android:api-28-alpha
+      - image: circleci/android:api-29
     steps:
       - checkout
       - restore_cache:
@@ -130,26 +130,37 @@ jobs:
 
   build-ios:
     macos:
-      xcode: "10.1.0"
+      xcode: "11.5.0"
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: tests
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.5" > ~/.ruby-version
       - restore_cache:
-          key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
+          key: gems-{{ checksum "ios/Gemfile.lock" }}
       - run:
           name: Configure Bundler
-          command: |
-            echo 'export BUNDLER_VERSION=$(cat ios/Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-            source $BASH_ENV
-            sudo gem install bundler
-      - run: cd ios && bundle check || bundle install --path vendor/bundle
+          command: sudo gem install bundler -v "$(grep -A 1 "BUNDLED WITH" ios/Gemfile.lock | tail -n 1)"
+      - run:
+          name: Run Bundler
+          command: cd ios && bundle check || bundle install
       - save_cache:
-          key: 1-gems-{{ checksum "ios/Gemfile.lock" }}
+          key: gems-{{ checksum "ios/Gemfile.lock" }}
           paths:
             - ios/vendor/bundle
+      - restore_cache:
+          key: pods-{{ checksum "ios/Podfile.lock" }}
+      - run:
+          name: Pod install
+          command: cd ios && bundle exec pod install
+      - save_cache:
+          key: pods-{{ checksum "ios/Podfile.lock" }}
+          paths:
+            - ios/Pods
       - restore_cache:
           key: gradle-{{ checksum "build.gradle" }}-{{ checksum "common/build.gradle" }}
       - run:

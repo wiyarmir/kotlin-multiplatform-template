@@ -1,6 +1,8 @@
-apply plugin: 'kotlin2js'
-apply plugin: 'kotlin-dce-js'
-apply plugin: 'org.jetbrains.kotlin.frontend'
+import groovy.json.StringEscapeUtils
+
+plugins {
+    id 'org.jetbrains.kotlin.js'
+}
 
 repositories {
     jcenter()
@@ -9,61 +11,57 @@ repositories {
 dependencies {
     implementation project(":common")
 
-    implementation Libs.kotlinStdlibJs
     testImplementation Libs.kotlinTestJs
 
     implementation Libs.kotlinxHtmlJs
     implementation Libs.kotlinxCoroutinesCoreCommon
-    implementation Libs.kotlinxCoroutinesCoreJs
-    implementation Libs.kotlinxSerializationRuntimeJs
 
     implementation Libs.kotlinExtensions
     implementation Libs.kotlinReact
     implementation Libs.kotlinReactDom
+    implementation npm('react', Versions.react)
+    implementation npm('react-dom', Versions.react)
+
+    // https://github.com/JetBrains/kotlin-wrappers/issues/109
+    implementation npm("core-js", "3")
+
+    // https://github.com/ktorio/ktor/issues/961
+    implementation npm("text-encoding", "*")
+
+    implementation(npm("abort-controller", "3.0.0"))
+
+    // devDependencies but no dsl
+    implementation devNpm("webpack", "4.42.1")
+    implementation devNpm("babel-loader", "8")
+    implementation devNpm("@babel/core", "7")
+    implementation devNpm("@babel/preset-env", "7")
+    implementation devNpm("css-loader", "*")
+    implementation devNpm("style-loader", "*")
+    implementation devNpm("html-loader", "*")
+    implementation devNpm("source-map-loader", "*")
+    implementation devNpm("karma", "*")
 }
 
-kotlinFrontend {
-
-    downloadNodeJsVersion = Versions.node
-
-    sourceMaps = false
-
-    npm {
-        replaceVersion "kotlinx-html-js", Versions.kotlin
-        replaceVersion "kotlinx-html-shared", Versions.kotlin
-        replaceVersion "kotlin-js-library", Versions.kotlin
-
-        dependency "react", Versions.react
-        dependency "react-dom"
-
-        // wont be needed once https://github.com/ktorio/ktor/issues/961 is fixed
-        dependency "text-encoding"
-
-        devDependency "webpack", "4"
-        devDependency "babel-loader", "8"
-        devDependency "@babel/core"
-        devDependency "@babel/preset-env"
-        devDependency "css-loader"
-        devDependency "karma"
-        devDependency "style-loader"
-        devDependency "source-map-loader"
-        devDependency "html-loader"
-    }
-
-    webpackBundle {
-        publicPath = "/frontend/"
-        port = 8080
-        proxyUrl = "http://localhost:9090/"
-        sourceMapEnabled = true
-        stats = "errors-only"
+kotlin {
+    target {
+        browser {
+            webpackTask {
+                doFirst {
+                    def path = StringEscapeUtils.escapeJavaScript(file("src/main/resources").absolutePath)
+                    file("webpack.config.d/resources.js").text = "config.resolve.modules.push('$path');"
+                }
+            }
+        }
     }
 }
 
-compileKotlin2Js {
-    kotlinOptions.metaInfo = true
-    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
-    kotlinOptions.sourceMap = true
-    kotlinOptions.sourceMapEmbedSources = "always"
-    kotlinOptions.moduleKind = 'commonjs'
-    kotlinOptions.main = "call"
+compileKotlinJs {
+    kotlinOptions {
+        metaInfo = true
+        outputFile = "$project.buildDir.path/js/${project.name}.js"
+        sourceMap = true
+        sourceMapEmbedSources = "always"
+        moduleKind = 'commonjs'
+        main = "call"
+    }
 }

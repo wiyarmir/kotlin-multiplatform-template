@@ -11,7 +11,7 @@ import io.ktor.routing.accept
 @UseExperimental(KtorExperimentalLocationsAPI::class)
 fun Route.index() {
     static("frontend") {
-        resource("web.bundle.js")
+        resource("web.js")
     }
 
     accept(ContentType.Text.Html) {

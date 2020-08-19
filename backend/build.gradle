@@ -18,7 +18,7 @@ dependencies {
     implementation Libs.kotlinStdlib
     implementation Libs.kotlinReflect
 
-    implementation Libs.kotlinxSerializationRuntime
+    implementation Libs.kotlinxSerializationCore
 
     implementation Libs.okhttp
 
@@ -26,6 +26,7 @@ dependencies {
     implementation Libs.ktorFreemaker
     implementation Libs.ktorHtmlBuilder
     implementation Libs.ktorServerNetty
+    implementation Libs.ktorSerialization
 
     implementation Libs.logbackClassic
     implementation Libs.fuel
@@ -43,14 +44,14 @@ compileKotlin {
 
 shadowJar {
     archiveClassifier.set('release')
-    from({ Paths.get(project(':web').buildDir.path, 'bundle') })
+    from({ Paths.get(project(':web').buildDir.path, 'distributions') })
 }
 
 tasks['shadowJar'].mustRunAfter clean
-tasks['processResources'].mustRunAfter ':web:bundle'
+tasks['processResources'].mustRunAfter ':web:build'
 
 task release() {
     dependsOn('clean')
-    dependsOn(':web:bundle')
+    dependsOn(':web:build')
     dependsOn('shadowJar')
 }

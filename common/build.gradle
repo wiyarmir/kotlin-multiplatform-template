@@ -10,6 +10,9 @@ kotlin {
     }
 
     js {
+        browser{
+
+        }
         compileKotlinJs {
             kotlinOptions.metaInfo = true
             kotlinOptions.sourceMap = true
@@ -31,9 +34,7 @@ kotlin {
             }
 
             dependencies {
-                api Libs.kotlinStdlibCommon
                 api Libs.kotlinxCoroutinesCoreCommon
-                api Libs.kotlinxSerializationRuntimeCommon
                 api Libs.ktorClientCore
                 api Libs.ktorClientJson
                 api Libs.ktorClientLogging
@@ -49,22 +50,12 @@ kotlin {
 
         iOSMain {
             dependencies {
-                api Libs.kotlinxCoroutinesCoreNative
-                api Libs.kotlinxSerializationRuntimeNative
                 api Libs.ktorClientIos
-                api Libs.ktorClientJsonNative
-                api Libs.ktorClientLoggingNative
-                api Libs.ktorClientSerializationNative
             }
         }
 
         jvmMain {
             dependencies {
-                api Libs.kotlinStdlib
-                api Libs.kotlinxSerializationRuntime
-                api Libs.ktorClientJsonJvm
-                api Libs.ktorClientLoggingJvm
-                api Libs.ktorClientSerializationJvm
             }
         }
 
@@ -78,18 +69,11 @@ kotlin {
 
         jsMain {
             dependencies {
-                api Libs.kotlinStdlibJs
-                api Libs.kotlinxSerializationRuntimeJs
-                api Libs.ktorClientJs
-                api Libs.ktorClientJsonJs
-                api Libs.ktorClientLoggingJs
-                api Libs.ktorClientSerializationJs
             }
         }
 
         jsTest {
             dependencies {
-                api Libs.kotlinTestJs
             }
         }
     }
