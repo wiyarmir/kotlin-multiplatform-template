@@ -53,16 +53,12 @@ kotlin {
             dependencies {
                 api Libs.kotlinxCoroutinesCoreNative
                 api Libs.ktorClientIos
-                api Libs.ktorClientJsonNative
-                api Libs.ktorClientLoggingNative
-                api Libs.ktorClientSerializationNative
             }
         }
 
         jvmMain {
             dependencies {
                 api Libs.kotlinStdlib
-                api Libs.kotlinxSerializationRuntime
                 api Libs.ktorClientJsonJvm
                 api Libs.ktorClientLoggingJvm
                 api Libs.ktorClientSerializationJvm

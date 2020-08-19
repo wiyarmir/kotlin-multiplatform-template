@@ -18,7 +18,7 @@ dependencies {
     implementation Libs.kotlinStdlib
     implementation Libs.kotlinReflect
 
-    implementation Libs.kotlinxSerializationRuntime
+    implementation Libs.kotlinxSerializationCore
 
     implementation Libs.okhttp
 
